@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Search @searchPokemon="updateQueryValue" @browsePokemon="browsePokemon" />
+    <Search
+      @searchPokemon="updateQueryValue"
+      @browsePokemon="browsePokemon"
+      @randomPokemon="randomPokemon"
+    />
     <Detail v-if="this.view == 'detail'" :pokemon="this.pokemon" />
     <Browse v-if="this.view == 'browse'" @getDetails="getDetails($event)" />
   </div>
@@ -25,6 +29,7 @@ export default {
       query: null,
       pokemon: null,
       view: "home",
+      max: 898,
     };
   },
   watch: {
@@ -33,8 +38,11 @@ export default {
     },
   },
   methods: {
-    updateQueryValue: function (params) {
-      this.query = params;
+    updateQueryValue: function (query) {
+      this.query = query;
+    },
+    randomPokemon: function () {
+      this.query = Math.floor(Math.random() * this.max) + 1;
     },
     browsePokemon: function () {
       this.view = "browse";

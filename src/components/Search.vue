@@ -5,6 +5,7 @@
       <input type="text" name="Search" id="search" />
     </div>
     <button type="submit">Search Pokémon!</button>
+    <button @click="random($event)" type="button">Random</button>
     <button @click="browse($event)" type="button">Browse All</button>
   </form>
 </template>
@@ -21,6 +22,10 @@ export default {
       } else {
         console.warn("Search field cannot be empty");
       }
+    },
+    random(e) {
+      this.$emit("randomPokemon");
+      e.target.parentNode.reset();
     },
     browse(e) {
       this.$emit("browsePokemon");
