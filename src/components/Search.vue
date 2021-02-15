@@ -1,20 +1,32 @@
 <template>
-  <div>
-    <h1>Search</h1>
-    <form>
-      <fieldset>
-        <div>
-          <label for="search">Search</label>
-          <input type="text" name="search" id="search" />
-        </div>
-      </fieldset>
-    </form>
-  </div>
+  <form @submit="searchPokemon($event)">
+    <div>
+      <label for="search">Search</label>
+      <input type="text" name="Search" id="search" />
+    </div>
+    <button type="submit">Search Pokémon!</button>
+    <button @click="browse($event)" type="button">Browse All</button>
+  </form>
 </template>
 
 <script>
 export default {
   name: "Search",
+  methods: {
+    searchPokemon(e) {
+      if (e.target[0].value) {
+        e.preventDefault();
+        this.$emit("searchPokemon", e.target[0].value);
+        e.target.reset();
+      } else {
+        console.warn("Search field cannot be empty");
+      }
+    },
+    browse(e) {
+      this.$emit("browsePokemon");
+      e.target.parentNode.reset();
+    },
+  },
 };
 </script>
 
