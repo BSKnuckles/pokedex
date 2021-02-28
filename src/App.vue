@@ -203,34 +203,10 @@ button {
         flex-direction: row;
       }
     }
+  }
 
-    // height: 100%;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
-    // & > div {
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: center;
-
-    //   form {
-    //     margin-top: 20px;
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     justify-content: center;
-
-    //     div {
-    //       display: flex;
-    //       flex-grow: 1;
-    //       margin-bottom: 20px;
-    //       input {
-    //         flex-grow: 1;
-    //       }
-    //     }
-    //   }
-    // }
+  @media screen and (min-width: 600px) {
+    grid-template-rows: 80px 1fr;
   }
 }
 #app,
