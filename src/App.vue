@@ -149,15 +149,17 @@ p {
       align-items: center;
 
       form {
+        margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
 
         div {
-          width: 100%;
+          display: flex;
+          flex-grow: 1;
           margin-bottom: 20px;
           input {
-            width: 100%;
+            flex-grow: 1;
           }
         }
       }

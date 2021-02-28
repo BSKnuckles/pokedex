@@ -51,7 +51,7 @@ export default {
 form {
   display: flex;
   & > * {
-    margin-left: 6px;
+    margin: 6px;
   }
 
   label {
