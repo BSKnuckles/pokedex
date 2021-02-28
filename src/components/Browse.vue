@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Browse View</h1>
-    <form>
+    <h1>Browse</h1>
+    <form id="controls">
       <fieldset>
         <legend>Filter</legend>
         <div>
-          <label for="limit">Number of Entries</label>
+          <label for="limit">Results per Page</label>
           <select @change="updateLimit($event)" name="limit" id="limit">
             <option value="20">20</option>
             <option value="50">50</option>
@@ -18,15 +18,23 @@
     <div v-if="this.entries.results" id="pokemon-list">
       <ul>
         <li v-for="pokemon in this.entries.results" :key="pokemon.name">
-          <Entry :entry="pokemon" v-on="$listeners" />
+          <BrowseEntry :entry="pokemon" v-on="$listeners" />
         </li>
       </ul>
       <div>
         <form @submit="formSubmit($event)">
-          <button @click="paginateEntries($event)" v-if="this.entries.previous">
+          <button
+            class="btn"
+            @click="paginateEntries($event)"
+            v-if="this.entries.previous"
+          >
             Previous
           </button>
-          <button @click="paginateEntries($event)" v-if="this.entries.next">
+          <button
+            class="btn"
+            @click="paginateEntries($event)"
+            v-if="this.entries.next"
+          >
             Next
           </button>
         </form>
@@ -37,12 +45,12 @@
 </template>
 
 <script>
-import Entry from "@/components/Entry";
+import BrowseEntry from "@/components/blocks/BrowseEntry";
 
 export default {
   name: "Browse",
   components: {
-    Entry,
+    BrowseEntry,
   },
   data() {
     return {
@@ -112,11 +120,46 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style scoped lang="scss">
+h1 {
+  font-size: 0;
+}
 #pokemon-list {
   ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    li {
+      width: 330px;
+    }
   }
+}
+#controls {
+  legend {
+    font-size: 0;
+  }
+  label {
+    color: #ba2225;
+    margin-right: 10px;
+  }
+  select {
+    border: 1px solid #ba2225;
+    border-radius: 10px;
+    color: #ba2225;
+    padding: 4px 8px;
+  }
+}
+form {
+  margin: 20px 0;
+  width: 100%;
+}
+#controls fieldset,
+#pokemon-list form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  column-gap: 10px;
 }
 </style>
