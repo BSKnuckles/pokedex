@@ -1,6 +1,6 @@
 <template>
   <form @submit="searchPokemon($event)">
-    <div>
+    <div class="input-group">
       <label for="search">Search</label>
       <input
         type="text"
@@ -9,11 +9,13 @@
         placeholder="Enter a Pokémon name of Pokédex ID"
       />
     </div>
-    <button class="btn" type="submit">Search Pokémon!</button>
-    <button class="btn" @click="random($event)" type="button">Random</button>
-    <button class="btn" @click="browse($event)" type="button">
-      Browse All
-    </button>
+    <div>
+      <button class="btn" type="submit">Search Pokémon!</button>
+      <button class="btn" @click="random($event)" type="button">Random</button>
+      <button class="btn" @click="browse($event)" type="button">
+        Browse All
+      </button>
+    </div>
   </form>
 </template>
 
@@ -50,8 +52,15 @@ export default {
 <style scoped lang="scss">
 form {
   display: flex;
-  & > * {
-    margin: 6px;
+  flex-direction: column;
+  & > div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 
   label {
@@ -62,6 +71,7 @@ form {
     border-radius: 10px;
     padding: 8px 12px;
     color: #ba2225;
+    flex-grow: 1;
 
     &:focus {
       outline: none;
@@ -69,6 +79,11 @@ form {
   }
   ::placeholder {
     color: #f0494a80;
+  }
+  @media screen and (min-width: 600px) {
+    .input-group {
+      min-width: 400px;
+    }
   }
 }
 </style>

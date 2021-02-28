@@ -83,16 +83,18 @@
             <tr>
               <th>Move</th>
               <th>Level</th>
-              <th>Method</th>
-              <th>Version</th>
+              <th class="desktop-only">Method</th>
+              <th class="desktop-only">Version</th>
             </tr>
             <tr v-for="(move, index) in this.moves" :key="index">
               <td>{{ move.move.name }}</td>
               <td>{{ move.version_group_details[0].level_learned_at }}</td>
-              <td>
+              <td class="desktop-only">
                 {{ move.version_group_details[0].move_learn_method.name }}
               </td>
-              <td>{{ move.version_group_details[0].version_group.name }}</td>
+              <td class="desktop-only">
+                {{ move.version_group_details[0].version_group.name }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -276,6 +278,10 @@ export default {
   max-width: 900px;
   margin: 10px 0;
 
+  h2 {
+    margin: 6px;
+  }
+
   h3 {
     margin-bottom: 20px;
     width: 100%;
@@ -286,7 +292,11 @@ export default {
   justify-content: flex-start;
   column-gap: 20px;
 }
-
+.desktop-only {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
 .infoCard {
   background-color: white;
   border-radius: 10px;
@@ -302,6 +312,7 @@ export default {
 
   header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     & > div {
@@ -315,9 +326,16 @@ export default {
 }
 #sprites {
   display: grid;
-  grid-template-rows: 1fr 3fr 3fr;
+  grid-template-rows: 1fr repeat(4, 3fr);
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
+
+  @media screen and (max-width: 930px) {
+    gap: 6px;
+    & > div {
+      grid-column: span 2;
+    }
+  }
 
   h3 {
     grid-column: 1 / span 4;

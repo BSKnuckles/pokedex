@@ -135,6 +135,11 @@ p {
   font-size: 18px;
   font-weight: 400;
 }
+button {
+  @media screen and (max-width: 600px) {
+    margin: 6px;
+  }
+}
 #app.home {
   header {
     height: 100%;
@@ -173,11 +178,59 @@ p {
 #app.detail,
 #app.browse {
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 1fr 4fr;
   grid-template-columns: 1fr;
   & > header {
     background-color: white;
     box-shadow: 0px 3px 6px #00000029;
+
+    form {
+      & > div {
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      form {
+        margin: 6px;
+        .btn {
+          font-size: 10px;
+        }
+      }
+    }
+    @media screen and (min-width: 600px) {
+      form {
+        flex-direction: row;
+      }
+    }
+
+    // height: 100%;
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    // & > div {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+
+    //   form {
+    //     margin-top: 20px;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+
+    //     div {
+    //       display: flex;
+    //       flex-grow: 1;
+    //       margin-bottom: 20px;
+    //       input {
+    //         flex-grow: 1;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 #app,
@@ -185,43 +238,17 @@ p {
 #app.browse {
   height: 100vh;
   width: 100vw;
-
-  @media screen and (max-width: 799px) {
-    & > header {
-    }
-  }
-  // @media screen and (max-width: 799px) {
-  //   display: flex;
-
-  //   header > div {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-
-  //     form {
-  //       display: flex;
-  //       flex-wrap: wrap;
-  //       align-items: center;
-
-  //       & > div,
-  //       input {
-  //         width: 100%;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // @media screen and (min-width: 800px) {
-
-  //   header > div {
-  //     justify-content: space-between;
-  //   }
-  // }
 }
 .container {
   margin: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+
+  @media screen and (min-width: 799px) {
+    flex-direction: row;
+  }
 }
 .logo {
   font-size: 0;
@@ -245,6 +272,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px;
+  padding: 6px;
+
+  @media screen and (min-width: 700px) {
+    padding: 20px;
+  }
 }
 </style>
