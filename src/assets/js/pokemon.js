@@ -34,7 +34,6 @@ export default class Pokemon {
 		});
 
 		this.moves = pokemon.moves;
-
 		if (pokemon.sprites.front_female != null) {
 			this.gender = "Male / Female";
 		} else {
