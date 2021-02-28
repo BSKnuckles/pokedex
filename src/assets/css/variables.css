@@ -1,0 +1,130 @@
+:root {
+  --grass: #7ac74c;
+  --fire: #ee8130;
+  --water: #6390f0;
+  --electric: #f7d02c;
+  --normal: #a8a77a;
+  --ice: #96d9d6;
+  --fighting: #c22e28;
+  --poison: #a33ea1;
+  --ground: #e2bf65;
+  --flying: #a98ff3;
+  --psychic: #f95587;
+  --bug: #a6b91a;
+  --rock: #b6a136;
+  --ghost: #735797;
+  --dark: #705746;
+  --dragon: #6f35fc;
+  --steel: #b7b7ce;
+  --fairy: #d685ad;
+}
+
+.bg-grass {
+  background-color: #7ac74cb3;
+}
+.bg-fire {
+  background-color: #ee8130b3;
+}
+.bg-water {
+  background-color: #6390f0b3;
+}
+.bg-electric {
+  background-color: #f7d02cb3;
+}
+.bg-normal {
+  background-color: #a8a77ab3;
+}
+.bg-ice {
+  background-color: #96d9d6b3;
+}
+.bg-fighting {
+  background-color: #c22e28b3;
+}
+.bg-poison {
+  background-color: #a33ea1b3;
+}
+.bg-ground {
+  background-color: #e2bf65b3;
+}
+.bg-flying {
+  background-color: #a98ff3b3;
+}
+.bg-psychic {
+  background-color: #f95587b3;
+}
+.bg-bug {
+  background-color: #a6b91ab3;
+}
+.bg-rock {
+  background-color: #b6a136b3;
+}
+.bg-ghost {
+  background-color: #735797b3;
+}
+.bg-dark {
+  background-color: #705746b3;
+}
+.bg-dragon {
+  background-color: #6f35fcb3;
+}
+.bg-steel {
+  background-color: #b7b7ceb3;
+}
+.bg-fairy {
+  background-color: #d685adb3;
+}
+
+.badge-grass {
+  background-color: var(--grass);
+}
+.badge-fire {
+  background-color: var(--fire);
+}
+.badge-water {
+  background-color: var(--water);
+}
+.badge-electric {
+  background-color: var(--electric);
+}
+.badge-normal {
+  background-color: var(--normal);
+}
+.badge-ice {
+  background-color: var(--ice);
+}
+.badge-fighting {
+  background-color: var(--fighting);
+}
+.badge-poison {
+  background-color: var(--poison);
+}
+.badge-ground {
+  background-color: var(--ground);
+}
+.badge-flying {
+  background-color: var(--flying);
+}
+.badge-psychic {
+  background-color: var(--psychic);
+}
+.badge-bug {
+  background-color: var(--bug);
+}
+.badge-rock {
+  background-color: var(--rock);
+}
+.badge-ghost {
+  background-color: var(--ghost);
+}
+.badge-dark {
+  background-color: var(--dark);
+}
+.badge-dragon {
+  background-color: var(--dragon);
+}
+.badge-steel {
+  background-color: var(--steel);
+}
+.badge-fairy {
+  background-color: var(--fairy);
+}
