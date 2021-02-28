@@ -31,6 +31,9 @@ export default {
     Detail,
     Browse,
   },
+  created() {
+    document.title = "Mike's Pokédex";
+  },
   data() {
     return {
       api: `https://pokeapi.co/api/v2`,
