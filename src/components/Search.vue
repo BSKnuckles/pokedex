@@ -38,11 +38,11 @@ export default {
     },
     random(e) {
       this.$emit("randomPokemon");
-      e.target.parentNode.reset();
+      e.target.parentNode.parentNode.reset();
     },
     browse(e) {
       this.$emit("browsePokemon");
-      e.target.parentNode.reset();
+      e.target.parentNode.parentNode.reset();
     },
   },
 };
